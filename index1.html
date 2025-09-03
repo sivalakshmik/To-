@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    
+    <title>Income Expense Calculator</title>
+   
+   
+    <body>
+    <div class="container">
+        <div class="header">
+            <h1>Income Expense Calculator</h1>
+           
+        </div>
+
+        <div class="dashboard">
+            <div class="stat-card income">
+                <h3>Total Income</h3>
+                <div class="amount" id="totalIncome">₹0.00</div>
+            </div>
+            <div class="stat-card expense">
+                <h3>Total Expenses</h3>
+                <div class="amount" id="totalExpense">₹0.00</div>
+            </div>
+            <div class="stat-card balance">
+                <h3>Net Balance</h3>
+                <div class="amount" id="netBalance">₹0.00</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="form-section">
+                <h2 id="formTitle">Add Transaction</h2>
+                <form id="transactionForm">
+                    <div class="form-group">
+                       
+                        <label for="description">Description</label>
+                        <input type="text" id="description" required placeholder="Enter description...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" step="0.01" required placeholder="0.00">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Transaction Type</label>
+                        <div class="type-selector">
+                            <div class="type-option">
+                                <input type="radio" id="income" name="type" value="income" checked>
+                                <label for="income">💵 Income</label>
+                            </div>
+                            <div class="type-option">
+                                <input type="radio" id="expense" name="type" value="expense">
+                                <label for="expense">💸 Expense</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary" id="submitBtn">Add Transaction</button>
+                        <button type="button" class="btn btn-secondary" id="resetBtn">Reset</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="transactions-section">
+                <div class="transactions-header">
+                    <h2>Transaction History</h2>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="radio" id="filterAll" name="filter" value="all" checked>
+                            <label for="filterAll">All</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="radio" id="filterIncome" name="filter" value="income">
+                            <label for="filterIncome">Income</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="radio" id="filterExpense" name="filter" value="expense">
+                            <label for="filterExpense">Expense</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="transactions-list" id="transactionsList">
+                    <div class="empty-state">
+                        <div>📊</div>
+                        <p>No transactions yet. Add your first transaction to get started!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+ <script src="script.js"></script>
+    </body>
+</head>
+
+   
